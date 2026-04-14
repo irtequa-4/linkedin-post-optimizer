@@ -110,15 +110,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.markdown(
-    """
-    <h1>
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="28" style="vertical-align:middle; margin-right:10px;">
-        LinkedIn Post Optimizer
-    </h1>
-    """,
-    unsafe_allow_html=True
-)
 st.subheader("Turn your boring post into a viral one — powered by AI")
 
 st.markdown("---")
