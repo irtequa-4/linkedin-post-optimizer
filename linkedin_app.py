@@ -101,16 +101,31 @@ Return ONLY the rewritten post, nothing else."""
     return chat_completion.choices[0].message.content
 
 # ---- STREAMLIT UI ----
-st.set_page_config(page_title="LinkedIn Post Optimizer", page_icon="💼")
-
-st.title("💼 LinkedIn Post Optimizer")
+st.markdown(
+    """
+    <h1>
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="28" style="vertical-align:middle; margin-right:10px;">
+        LinkedIn Post Optimizer
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <h1>
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="28" style="vertical-align:middle; margin-right:10px;">
+        LinkedIn Post Optimizer
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 st.subheader("Turn your boring post into a viral one — powered by AI")
 
 st.markdown("---")
 
 user_post = st.text_area("📝 Paste your LinkedIn post here:", height=200, placeholder='e.g. "I got a new job today at Google"')
 
-if st.button("🚀 Optimize My Post!"):
+if st.button("🤖 Optimize My Post!"):
     if not user_post.strip():
         st.warning("Please paste a post first!")
     else:
@@ -125,14 +140,14 @@ if st.button("🚀 Optimize My Post!"):
             st.markdown(f"- {r}")
 
         # Optimize
-        with st.spinner("✨ AI is rewriting your post..."):
+        with st.spinner("✍🏻 AI is rewriting your post..."):
             optimized = optimize_post(user_post)
 
         # Score optimized
         new_score, new_reasons = score_post(optimized)
 
         st.markdown("---")
-        st.markdown("### ✨ Optimized Version")
+        st.markdown("### 🪄 Optimized Version")
         st.success(f"**New Score: {new_score}/100**")
         st.text_area("Copy your new post:", value=optimized, height=250)
 
